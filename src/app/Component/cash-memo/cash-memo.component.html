@@ -1,0 +1,56 @@
+<div class="row" style="margin-top: 5px;" >
+    <div class="col"  >
+       <label for="">Total</label>
+       <input class="mb-2" style="width: 200px; border: 1px solid gainsboro; border-radius: 5px; margin-left: 20px;"[value]="sumoftotal()"><br>
+       <label for="">Dis</label>
+       <input class="mb-2" [value]="Dis()"  style="width: 200px; border: 1px solid gainsboro; border-radius: 5px; margin-left: 30px;"><br>
+       <label for="">DisLS</label>
+       <input class="ms-3 mb-2" [value]="calculateTotalDisLS()"  e="width: 200px; border: 1px solid gainsboro; border-radius: 5px;" type="text"><br>
+       <label for="">Dis By</label>
+       <select class="ms-2 mb-2" style="width: 200px; border: 1px solid gainsboro; border-radius: 5px;">
+           <option value="#">Sk</option>
+           <option value="#">Si</option>
+           <option value="#">SL</option>
+       </select><br>
+       <label for="">Net</label>
+       <input class="ms-4 mb-2" style="width: 200px; border: 1px solid gainsboro; border-radius: 5px;" [value]=""><br>
+       <label for="">Paid</label>
+       <input class="mb-2" style="width: 200px; border: 1px solid gainsboro; border-radius: 5px; margin-left: 20px;" type="text"><br>
+       <label for="">Due</label>
+       <input class="mb-2" style="width: 200px; border: 1px solid gainsboro; border-radius: 5px; margin-left: 20px;" type="text">
+    </div>
+    <div class="col">
+        <label for="">Cash</label>
+        <input class="ms-4 mb-2" style="width: 240px; border: 1px solid gainsboro; border-radius: 5px;" type="text"><br>
+        <label for="">Card</label>
+        <input class="ms-4 mb-2" style="width: 120px; border: 1px solid gainsboro; border-radius: 5px;" type="text">
+        <input class="mb-2" style="width: 120px; border: 1px solid gainsboro; border-radius: 5px;" type="text"><br>
+        <label for="">Mobile</label>
+        <input class="ms-2 mb-2" style="width: 120px; border: 1px solid gainsboro; border-radius: 5px;" type="text">
+        <select class="mb-2" style="width: 120px; border: 1px solid gainsboro; border-radius: 5px;" type="text">
+           <option value="#">--Select--</option>
+           <option value="#">Banglalink</option>
+           <option value="#">Grameen</option>
+           <option value="#">Robi</option>
+           <option value="#">Airtel</option>
+        </select><br>
+        <label for="">Card</label>
+        <input class="ms-4 mb-2" style="width: 120px; border: 1px solid gainsboro; border-radius: 5px;" type="text">
+        <input class="mb-2" style="width: 120px; border: 1px solid gainsboro; border-radius: 5px;" type="text" ><br>
+        <label for="">Cheque</label>
+        <input class="ms-2 mb-2" style="width: 120px; border: 1px solid gainsboro; border-radius: 5px;" type="text">
+        <input class="mb-2" style="width: 120px; border: 1px solid gainsboro; border-radius: 5px;" type="text" value="cheque no"><br>
+        <label for="">Total</label>
+        <input class=" ms-4 mb-2" style="width: 240px; border: 1px solid gainsboro; border-radius: 5px; margin-left: 20px;" type="text"><br>
+        <div class="row">
+            <div class="col-2">
+                <label for=""><span>Rpt Delivery</span></label>
+            </div>
+             <div class="col-10">
+                <input class=" ms-1 mb-2" style="width: 120px; border: 1px solid gainsboro; border-radius: 5px;" type="date">
+        <input class="mb-2" style="width: 120px; border: 1px solid gainsboro; border-radius: 5px;" type="time" ><br>
+             </div>
+        </div>
+
+    </div>
+</div>

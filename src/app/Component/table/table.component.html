@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col" style="border: 1px solid gainsboro;">
+        <table class="table mt-2" style="border: 1px solid gainsboro ;">
+            <thead>
+              <tr>
+                <th scope="col">SL</th>
+                <th scope="col">Particuler</th>
+                <th scope="col">Qty</th>
+                <th scope="col">Rate</th>
+                <th scope="col">Total</th>
+                <th scope="col">Dis%</th>
+                <th scope="col">DisLS</th>
+                <th scope="col">Net</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let s of newService;  let index = index">
+                <td scope="row">{{s.id}}</td>
+                <td>{{s.particular}}</td>
+                <td>{{s.qty}}</td>
+                <td>{{s.rate}}</td>
+                <td>{{s.qty*s.rate}}</td>
+                <td><input class="a" #inputOne (keyup.enter)="getInput1(inputOne.value,index)" [(ngModel)]="disModelper[index]" style="width: 50px; border: 1px solid gainsboro; border-radius: 2px;"></td>
+                <td><input class="a" #inputTwo (keyup.enter)="getInput2(inputTwo.value,index)" [(ngModel)]="disModels[index]" style="width: 50px; border: 1px solid gainsboro; border-radius: 2px;"></td>
+                <td>{{(s.qty*s.rate)-(((s.qty*s.rate)*disModels[index])/100)}}</td>
+                <td><button style="width: 30px; border: none; border-radius: 2px;"><i class="fa-sharp fa-solid fa-xmark"></i></button></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="col" style="border: 1px solid gainsboro;">
+       <app-cash-memo></app-cash-memo>
+    </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <table class="table mt-2">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col">Total = {{sumoftotal()}}</th>
+          <th scope="col">TotalDis% = {{Dis()}}</th>
+          <th scope="col">TotalDisLS = {{calculateTotalDisLS()}}</th>
+          <th scope="col">Net = {{calculateTotalNet()}}</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="col-5">
+      
+  </div>
+</div>

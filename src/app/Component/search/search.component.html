@@ -1,0 +1,95 @@
+<div class="col p-2">
+   <div class="row">
+    <div class="col-4 mt-2">
+        <button class="btn btn-primary me-2">Patient info</button>
+    </div>
+   </div>
+   <div class="row mt-2" style="margin-left: 30px;">
+     <div class="col-8">
+      <label class="me-2" for="">Memo No</label>
+      <input style="min-width: 100px; border: 1px solid gainsboro; border-radius: 5px;" type="text">
+      <select style="min-width: 100px; border: 1px solid gainsboro; border-radius: 5px; padding: 1px;" [(ngModel)]="WayNo" >
+         <option *ngFor="let w of ways" [value]="w.id">{{w.way}}</option>
+      </select>
+      <div *ngIf="WayNo == 0">
+       <label for="">Contact No</label> 
+       <input list="con" class="ms-1 mt-2" style="min-width: 300px; border: 1px solid gainsboro; border-radius: 5px;" [(ngModel)]="selectOption" (change)="onChangeContact()">
+        <datalist id="con">
+            <option *ngFor="let detail of  PaDetails" [value]="detail.contact">{{detail.contact}}</option>
+        </datalist>
+      </div>
+      <div *ngIf="WayNo == 1">
+        <label for="">Patient ID</label> 
+        <input list="PID" class="ms-1 mt-2" style="min-width: 300px; border: 1px solid gainsboro; border-radius: 5px;" [(ngModel)]="selectOption" (change)="onChangePatient()" >
+        <datalist id="PID">
+            <option *ngFor="let detail of  PaDetails" [value]="detail.pid">{{detail.pid}}</option>
+        </datalist>
+      </div>
+     </div>
+     <div class="col-4">
+          <input type="radio" id="default" name="fav_language" value="Default">
+          <label for="default">Default</label>
+          <input type="radio" id="fDis" name="fav_language" value="Full Discount">
+          <label for="fDis">Full Discount</label>
+          <input type="radio" id="discount mar" name="fav_language" value="Discount Mar">
+          <label for="discount mar">Discount Mar</label>
+     </div>
+   </div>
+   <div class="row mt-2">
+      <div class="col">
+         <div style="margin-left: 60px;">
+            <label  for="n">Name</label>
+            <input style="margin-left: 20px; border: 1px solid gainsboro; border-radius: 5px;" id="n" [(ngModel)]="patient_name"><br>
+            <label style="margin-right: 5px;" for="se">Services</label>
+            <input class="mt-2"  list="op" name="op" type="text" style="border: 1px solid gainsboro; border-radius: 5px;" [(ngModel)]="patient_service" (change)="onServiceChange()">
+            <datalist  id="op">
+                <option *ngFor="let s of service" [value]="s.particular">{{s.particular}}</option>
+            </datalist>
+         </div>
+      </div>
+      <div class="col">
+        <label for="#">Refd By</label>
+        <input class="ms-2" list="dr" type="text" [defaultValue]=" " style="border: 1px solid gainsboro; border-radius: 5px;" [(ngModel)] ="referd_by" >
+        <datalist id="dr">
+          <option *ngFor="let detail of  PaDetails" [value]="detail.refd_by">{{detail.refd_by}}</option>
+        </datalist>
+        <button type="button" style="width: 30px; border: 1px solid gainsboro; background-color: cornsilk; border-radius: 5px; "><i class="fa-solid fa-plus" style="color: #010914;"></i></button><br>
+        <label for="">Refd SS</label>
+        <input class="ms-2 mt-2" style="min-width: 220px; border: 1px solid gainsboro; border-radius: 5px;" [(ngModel)]="referd_ss">
+      </div>
+      <div class="col">
+        <label for="">Age(D-M-Y)</label>
+        <input class="ms-2" style="width: 70px; border: 1px solid gainsboro; border-radius: 5px;" type="text">
+        <input class="" style="width: 70px; border: 1px solid gainsboro; border-radius: 5px;" type="text">
+        <input class="" style="width: 70px; border: 1px solid gainsboro; border-radius: 5px;" type="text">
+        <select style="min-width: 40px; border: 1px solid gainsboro; border-radius: 5px; padding: 2px;" name="" [(ngModel)]="patient_gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br>
+        <label for="">Contact/PID</label>
+        <input type="text" class="ms-2 mt-2" style="width: 150px; border: 1px solid gainsboro; border-radius: 5px;" [(ngModel)]="patient_contact_id">
+        <input type="text" class="mt-2" style="width: 150px; border: 1px solid gainsboro; border-radius: 5px;" [(ngModel)]="patient_ID">
+      </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="modal-body">
+         ...
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         <button type="button" class="btn btn-primary">Save changes</button>
+       </div>
+     </div>
+   </div>
+ </div>
